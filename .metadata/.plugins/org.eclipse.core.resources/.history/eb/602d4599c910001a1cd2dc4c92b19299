@@ -1,0 +1,15 @@
+package com.example.demo.repository;
+
+import java.util.List;
+
+import com.example.demo.entity.ProjectMember;
+
+public class ProjectMemberRepositoryImpl implements ProjectMemberRepositoryCustom {
+
+	@Override
+	public List<ProjectMember> findByProjectId(Long theProjectId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

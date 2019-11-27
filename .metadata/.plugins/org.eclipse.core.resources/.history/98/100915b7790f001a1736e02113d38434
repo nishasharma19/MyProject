@@ -1,0 +1,15 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.entity.Subtask;
+
+public class SubTaskServiceImpl implements SubTaskService {
+
+	@Override
+	public List<Subtask> viewSubTasks(Long taskId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

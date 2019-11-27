@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=projectManagement/src\/main\/java&lt;com.example.demo.service{EmployeeService.java[EmployeeService" modifiers="513" timestamp="1574065971267"/>
+<typeInfo handle="=ForCharts/src\/main\/java&lt;com.example.demo.service{TaskChartService.java[TaskChartService" modifiers="513" timestamp="1574682482388"/>
+<typeInfo handle="=projectManagement/C:\/Users\/b8ibmjava32\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.1.5.RELEASE\/spring-data-jpa-2.1.5.RELEASE.jar&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1573032720594"/>
+<typeInfo handle="=ForCharts/src\/main\/java&lt;com.example.demo.service{ProjectService.java[ProjectService" modifiers="513" timestamp="1574406627003"/>
+<typeInfo handle="=ForCharts/C:\/Users\/b8ibmjava32\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/2.1.5.RELEASE\/spring-data-commons-2.1.5.RELEASE.jar&lt;org.springframework.data.projection(ProjectionInformation.class[ProjectionInformation" modifiers="1537" timestamp="1573032721975"/>
+<typeInfo handle="=ForCharts/src\/main\/java&lt;com.example.demo.service{ProjectMemberService.java[ProjectMemberService" modifiers="513" timestamp="1574770179278"/>
+</typeInfoHistroy>

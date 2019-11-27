@@ -1,0 +1,21 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.entity.Subtask;
+import com.example.demo.repository.SubTaskRepository;
+
+public class SubTaskServiceImpl implements SubTaskService {
+
+	@Autowired
+	private SubTaskRepository subTaskRepo;
+	@Override
+	public List<Subtask> viewSubTasks(Long taskId) {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
+
+}

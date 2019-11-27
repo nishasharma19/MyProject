@@ -1,0 +1,15 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.entity.Project;
+
+public class ProjectServiceImpl implements ProjectService {
+
+	@Override
+	public List<Project> getProjects() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

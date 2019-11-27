@@ -1,0 +1,73 @@
+package com.example.demo.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
+import org.hibernate.query.Query;
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entity.Subtask;
+import com.example.demo.entity.Task;
+import com.example.demo.repository.SubTaskRepository;
+import com.example.demo.repository.TaskRepository;
+
+@Repository
+public class SubtaskDAOImpl implements SubtaskDAO {
+
+	private EntityManager entityManager;
+	
+	@Autowired
+	private SubTaskRepository subtaskRepository;
+
+	public SubtaskDAOImpl(EntityManager entityManager) {
+		super();
+		this.entityManager = entityManager;
+	}
+
+	@Override
+	@Transactional
+	@Modifying
+	public void updateProgress(Long subtaskId, Long progressPercentage) {
+
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query<Subtask> theQuery = currentSession.createQuery("update Subtask set progressPercentage=:updated where subTaskId=:Id").
+				setParameter("updated", progressPercentage).setParameter("Id", subtaskId);
+				
+		theQuery.executeUpdate();
+		
+		updateTaskProgress(subtaskId, progressPercentage);
+		
+		
+	}
+	
+	public void updateTaskProgress(Long subtaskId, Long progressPercentage)
+	{
+		Subtask subtask = subtaskRepository.findBySubTaskId(subtaskId);
+		Task taskobj= subtask.getTaskId();
+		System.out.println(taskobj);
+		Long taskId = taskobj.getTaskId();
+		List<Subtask> subtasks = subtaskRepository.findByTaskId(taskId);
+		
+	}
+
+	/*
+	 * @Override public void getAllSubtasks() { Session currentSession =
+	 * entityManager.unwrap(Session.class);
+	 * 
+	 * long someId=1L; //Query<Subtask> theQuery =
+	 * currentSession.createQuery("from Subtask"); Query<Subtask> theQuery =
+	 * currentSession.createQuery("from Subtask s where s.taskId =:otherId").
+	 * setParameter("otherId", someId);
+	 * 
+	 * 
+	 * List<Subtask> subtasks = theQuery.getResultList();
+	 * 
+	 * System.out.println(subtasks.toString()); }
+	 */
+
+}

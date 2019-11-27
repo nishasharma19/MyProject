@@ -1,0 +1,53 @@
+package com.example.demo.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
+import org.hibernate.query.Query;
+import org.hibernate.Session;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entity.Subtask;
+
+@Repository
+public class SubtaskDAOImpl implements SubtaskDAO {
+
+	private EntityManager entityManager;
+
+	public SubtaskDAOImpl(EntityManager entityManager) {
+		super();
+		this.entityManager = entityManager;
+	}
+
+	@Override
+	@Transactional
+	@Modifying
+	public void updateProgress(Long subtaskId, Long progressPercentage) {
+
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query<Subtask> theQuery = currentSession.createQuery("update Subtask set progressPercentage=:updated where subTaskId=:Id").
+				setParameter("updated", progressPercentage).setParameter("Id", subtaskId);
+				
+
+		theQuery.executeUpdate();
+	}
+
+	/*
+	 * @Override public void getAllSubtasks() { Session currentSession =
+	 * entityManager.unwrap(Session.class);
+	 * 
+	 * long someId=1L; //Query<Subtask> theQuery =
+	 * currentSession.createQuery("from Subtask"); Query<Subtask> theQuery =
+	 * currentSession.createQuery("from Subtask s where s.taskId =:otherId").
+	 * setParameter("otherId", someId);
+	 * 
+	 * 
+	 * List<Subtask> subtasks = theQuery.getResultList();
+	 * 
+	 * System.out.println(subtasks.toString()); }
+	 */
+
+}

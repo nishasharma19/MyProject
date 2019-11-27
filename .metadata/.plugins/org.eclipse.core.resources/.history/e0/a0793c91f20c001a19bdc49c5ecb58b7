@@ -1,0 +1,28 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.entity.Task;
+import com.example.demo.repository.EmployeeRepository;
+import com.example.demo.repository.ProjectRepository;
+import com.example.demo.repository.TaskRepository;
+
+public class TaskChartServiceImpl implements TaskChartService {
+
+	@Autowired
+	private ProjectRepository projectRepo;
+	
+	@Autowired
+	private TaskRepository taskRepo;
+	
+	@Override
+	public List<Task> getTasks() {
+		// TODO Auto-generated method stub
+		
+		List<Pro>
+		return null;
+	}
+
+}
